@@ -1,4 +1,4 @@
-from urllib.parse import quote_plus
+      .   from urllib.parse import quote_plus
 from pyrogram import Client
 from typing import Any, Optional
 from pyrogram.types import Message
@@ -84,7 +84,7 @@ async def gen_link(m: Message,log_msg: Messages, from_channel: bool):
         media_type = get_media_mime_type(log_msg)
         page_link = f"https://{Var.PAGE_LINK}/?id={log_msg.message_id}&hash={get_hash(log_msg)}&type={media_type}"
     else:
-        page_link = f"{Var.URL}watch/{get_hash(log_msg)}{log_msg.message_id}"
+        page_link = f"{Var.URL}watch/{log_msg.message_id}/{quote_plus(get_name(m))}/{get_hash(log_msg)}"
     
     stream_link = f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}"
     Stream_Text=lang.stream_msg_text.format(file_name, file_size, stream_link, page_link)
