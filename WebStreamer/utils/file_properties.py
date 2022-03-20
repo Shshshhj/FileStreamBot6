@@ -1,4 +1,4 @@
-      .   from urllib.parse import quote_plus
+from urllib.parse import quote_plus
 from pyrogram import Client
 from typing import Any, Optional
 from pyrogram.types import Message
